@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 
+import { HomeHighlights } from "@/components/home-highlights";
 import { ShimmerText } from "@/components/shimmer-text";
 import { site } from "@/content/site";
 
@@ -31,6 +32,15 @@ export function HomeHero() {
       >
         {site.description}
       </motion.p>
+
+      <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1.05 }}
+        className="w-full"
+      >
+        <HomeHighlights />
+      </motion.div>
     </div>
   );
 }

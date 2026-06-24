@@ -44,10 +44,10 @@ export const fun: FunContent = {
     },
   ],
   galleryPhotos: [
-    { id: "photo-1", src: "/images/gallery/placeholder-1.jpg", alt: "Lorem ipsum gallery photo 1" },
-    { id: "photo-2", src: "/images/gallery/placeholder-2.jpg", alt: "Lorem ipsum gallery photo 2" },
-    { id: "photo-3", src: "/images/gallery/placeholder-3.jpg", alt: "Lorem ipsum gallery photo 3" },
-    { id: "photo-4", src: "/images/gallery/placeholder-4.jpg", alt: "Lorem ipsum gallery photo 4" },
+    { id: "photo-1", src: "/images/gallery/placeholder-1.svg", alt: "Lorem ipsum gallery photo 1" },
+    { id: "photo-2", src: "/images/gallery/placeholder-2.svg", alt: "Lorem ipsum gallery photo 2" },
+    { id: "photo-3", src: "/images/gallery/placeholder-3.svg", alt: "Lorem ipsum gallery photo 3" },
+    { id: "photo-4", src: "/images/gallery/placeholder-4.svg", alt: "Lorem ipsum gallery photo 4" },
   ],
   places: [
     {
@@ -55,7 +55,7 @@ export const fun: FunContent = {
       name: "Lorem City",
       lat: 40.7128,
       lng: -74.006,
-      thumbnail: "/images/places/placeholder-1.jpg",
+      thumbnail: "/images/places/placeholder-1.svg",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     },
     {
@@ -63,7 +63,7 @@ export const fun: FunContent = {
       name: "Ipsum Bay",
       lat: 37.7749,
       lng: -122.4194,
-      thumbnail: "/images/places/placeholder-2.jpg",
+      thumbnail: "/images/places/placeholder-2.svg",
       description: "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     },
   ],
