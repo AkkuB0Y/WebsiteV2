@@ -20,20 +20,20 @@ export type SiteContent = {
 export const site: SiteContent = {
   name: "Lorem Ipsum",
   socials: {
-    github: "https://github.com",
-    linkedin: "https://www.linkedin.com",
-    email: "mailto:hello@example.com",
+    github: "https://github.com/AkkuB0Y",
+    linkedin: "https://www.linkedin.com/in/akshaysatish26205/",
+    email: "mailto:asatish@uwaterloo.ca",
   },
   resumePdf: "/resume.pdf",
   intro: [
     { text: "Hello, I'm " },
-    { text: "Lorem", shimmer: true },
+    { text: "Akshay", shimmer: true },
     { text: ", a " },
-    { text: "placeholder", shimmer: true },
-    { text: " student and engineer @ " },
-    { text: "Ipsum Corp", shimmer: true },
+    { text: "Computer Engineering", shimmer: true },
+    { text: " student @ " },
+    { text: "UWaterloo", shimmer: true },
     { text: "." },
   ],
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "I'm an aspiring engineer with a passion for building software systems. On this site, you can find out more about my industry experience, technical projects, and fun hobbies.",
 };

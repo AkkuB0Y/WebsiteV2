@@ -110,3 +110,42 @@
     animation: none;
   }
 }
+
+.project-section-surface {
+  border-radius: 0.5rem;
+  border: 1px solid color-mix(in srgb, var(--border) 25%, transparent);
+  padding: 1.5rem;
+}
+
+.project-section-surface--grid {
+  background-color: color-mix(in srgb, var(--section-accent) 4%, transparent);
+  background-image: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--section-accent) 14%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+
+.project-section-surface--gradient {
+  background:
+    radial-gradient(
+      ellipse 90% 70% at 10% -10%,
+      color-mix(in srgb, var(--section-accent) 10%, transparent),
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse 60% 50% at 95% 100%,
+      color-mix(in srgb, var(--section-accent) 5%, transparent),
+      transparent 55%
+    );
+}
+
+.project-section-surface--lines {
+  background-color: color-mix(in srgb, var(--section-accent) 3%, transparent);
+  background-image: linear-gradient(
+    color-mix(in srgb, var(--section-accent) 8%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 100% 26px;
+}
