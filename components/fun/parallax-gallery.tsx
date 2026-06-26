@@ -1,9 +1,9 @@
 "use client";
 
 import { useMemo, useRef } from "react";
-import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
+import { FunImage } from "@/components/fun/fun-image";
 import type { GalleryPhoto } from "@/content/fun";
 import { cn } from "@/lib/utils";
 
@@ -43,7 +43,7 @@ function GalleryTile({ photo, index }: GalleryTileProps) {
       )}
     >
       <div className="relative h-full w-full">
-        <Image
+        <FunImage
           src={photo.src}
           alt={photo.alt}
           fill

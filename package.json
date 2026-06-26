@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "npm run convert-heic && next dev",
+    "build": "npm run convert-heic && next build",
+    "convert-heic": "node scripts/convert-heic-images.mjs",
     "start": "next start",
     "lint": "next lint"
   },
@@ -31,6 +32,7 @@
     "@types/react-dom": "^19.1.6",
     "eslint": "^9.31.0",
     "eslint-config-next": "^15.4.4",
+    "heic-convert": "^2.1.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3"

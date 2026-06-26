@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect } from "react";
-import Image from "next/image";
 import L from "leaflet";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 
+import { FunImage } from "@/components/fun/fun-image";
 import type { Place } from "@/content/fun";
 import "leaflet/dist/leaflet.css";
 
@@ -65,7 +65,7 @@ export function PlacesMap({ places }: PlacesMapProps) {
             <Popup>
               <div className="w-52 space-y-2">
                 <div className="relative aspect-[3/2] overflow-hidden rounded-sm border border-border">
-                  <Image
+                  <FunImage
                     src={place.thumbnail}
                     alt={place.name}
                     fill
