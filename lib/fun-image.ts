@@ -1,12 +1,15 @@
 const HEIC_PATTERN = /\.heic$/i;
+const UPPERCASE_EXT_PATTERN = /\.(jpe?g|png|webp|gif)$/i;
 
-/** HEIC isn't reliably rendered in browsers — serve the converted JPEG twin. */
+/** Normalize paths for Linux deploys (case-sensitive) and HEIC twins. */
 export function resolveFunImageSrc(src: string): string {
-  if (HEIC_PATTERN.test(src)) {
-    return src.replace(HEIC_PATTERN, ".jpg");
+  let resolved = src;
+
+  if (HEIC_PATTERN.test(resolved)) {
+    resolved = resolved.replace(HEIC_PATTERN, ".jpg");
   }
 
-  return src;
+  return resolved.replace(UPPERCASE_EXT_PATTERN, (ext) => ext.toLowerCase());
 }
 
 export function isHeicSrc(src: string): boolean {

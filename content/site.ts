@@ -18,7 +18,7 @@ export type SiteContent = {
 };
 
 export const site: SiteContent = {
-  name: "Lorem Ipsum",
+  name: "Akshay Satish",
   socials: {
     github: "https://github.com/AkkuB0Y",
     linkedin: "https://www.linkedin.com/in/akshaysatish26205/",

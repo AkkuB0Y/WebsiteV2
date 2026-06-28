@@ -40,6 +40,10 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: site.name,
   description: "Personal website",
+  icons: {
+    icon: "/images/website-icon/akkub0y.jpeg",
+    apple: "/images/website-icon/akkub0y.jpeg",
+  },
 };
 
 export default function RootLayout({
