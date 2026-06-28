@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { getHomeHighlights } from "@/lib/highlights";
+import { resolveFunImageSrc } from "@/lib/fun-image";
 import { cn } from "@/lib/utils";
 
 type HighlightLabelProps = {
@@ -38,7 +39,7 @@ function HighlightTile({
         {thumbnail ? (
           <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded border border-border/80 bg-surface-2">
             <Image
-              src={thumbnail.src}
+              src={resolveFunImageSrc(thumbnail.src)}
               alt={thumbnail.alt}
               fill
               className="object-cover"
