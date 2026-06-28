@@ -18,6 +18,9 @@
 # production
 /build
 
+# original (pre-optimization) image backups
+/image-originals
+
 # misc
 .DS_Store
 *.pem

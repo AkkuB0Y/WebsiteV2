@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "npm run convert-heic && next dev",
-    "build": "npm run convert-heic && next build",
+    "dev": "npm run prepare-images && next dev",
+    "build": "npm run prepare-images && next build",
+    "prepare-images": "npm run convert-heic && npm run optimize-images",
     "convert-heic": "node scripts/convert-heic-images.mjs",
+    "optimize-images": "node scripts/optimize-images.mjs",
     "start": "next start",
     "lint": "next lint"
   },

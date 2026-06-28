@@ -2,7 +2,7 @@
  * Fun page content — edit this file to update /fun.
  *
  * Images go in public/:
- *   - Gallery:  public/images/gallery/  (.HEIC supported — auto-converted to .jpg on build)
+ *   - Gallery:  public/images/gallery/  (.JPG supported — auto-converted to .jpg on build)
  *   - Places:   public/images/places/
  *
  * YouTube ID = the `v=` param from a watch URL
@@ -59,23 +59,48 @@ export const fun: FunContent = {
   galleryPhotos: [
     {
       id: "photo-1",
-      src: "/images/gallery/IMG_1127.HEIC",
-      alt: "Out and about with friends",
+      src: "/images/gallery/IMG_1127.JPG",
+      alt: "vancouver",
     },
     {
       id: "photo-2",
-      src: "/images/gallery/IMG_1591.HEIC",
-      alt: "A night out in the city",
+      src: "/images/gallery/IMG_1591.JPG",
+      alt: "vancouver",
     },
     {
       id: "photo-3",
-      src: "/images/gallery/IMG_1609.HEIC",
-      alt: "Travel snapshot from the road",
+      src: "/images/gallery/IMG_1609.JPG",
+      alt: "vancouver",
     },
     {
       id: "photo-4",
-      src: "/images/gallery/IMG_1636.HEIC",
-      alt: "Candid moment from a trip",
+      src: "/images/gallery/IMG_1636.JPG",
+      alt: "vancouver",
+    },
+    {
+      id: "photo-5",
+      src: "/images/gallery/IMG_1150.JPG",
+      alt: "vancouver",
+    },
+    {
+      id: "photo-6",
+      src: "/images/gallery/IMG_1172.JPG",
+      alt: "vancouver",
+    },
+    {
+      id: "photo-7",
+      src: "/images/gallery/IMG_1215.JPG",
+      alt: "vancouver",
+    },
+    {
+      id: "photo-8",
+      src: "/images/gallery/IMG_1217.JPG",
+      alt: "vancouver",
+    },
+    {
+      id: "photo-9",
+      src: "/images/gallery/IMG_1570.JPG",
+      alt: "vancouver",
     },
   ],
   places: [
@@ -84,54 +109,54 @@ export const fun: FunContent = {
       name: "Toronto",
       lat: 43.6532,
       lng: -79.3832,
-      thumbnail: "/images/places/toronto.HEIC",
+      thumbnail: "/images/places/toronto.JPG",
       description:
-        "Home base — concerts, late-night food runs, and exploring the city between terms.",
+        "Home town!",
     },
     {
       id: "place-vancouver",
       name: "Vancouver",
       lat: 49.2827,
       lng: -123.1207,
-      thumbnail: "/images/places/vancouver.HEIC",
+      thumbnail: "/images/places/vancouver.JPG",
       description:
-        "Mountains and ocean in the same skyline — one of the most scenic cities I've visited.",
+        "Never seen snow-capped peaks and palm trees on a beach in one view except for here. Currently here for my 4th co-op.",
     },
     {
       id: "place-montreal",
       name: "Montreal",
       lat: 45.5017,
       lng: -73.5673,
-      thumbnail: "/images/places/montreal.HEIC",
+      thumbnail: "/images/places/montreal.JPG",
       description:
-        "French-Canadian culture, incredible food, and long walks through Old Montreal.",
+        "Everything to love about Europe and North America in one city. Visited a million times",
     },
     {
       id: "place-quebec-city",
       name: "Quebec City",
       lat: 46.8139,
       lng: -71.208,
-      thumbnail: "/images/places/quebeccity.HEIC",
+      thumbnail: "/images/places/quebeccity.JPG",
       description:
-        "Cobblestone streets and European charm without leaving North America.",
+        "North America's most European city. Visited 2025",
     },
     {
       id: "place-ottawa",
       name: "Ottawa",
       lat: 45.4215,
       lng: -75.6972,
-      thumbnail: "/images/places/ottawa.HEIC",
+      thumbnail: "/images/places/ottawa.JPG",
       description:
-        "Canada's capital — museums, the canal, and a quieter pace than Toronto.",
+        "Canada's boring but peaceful capital. Lived here for my 3rd co-op",
     },
     {
       id: "place-nyc",
       name: "New York City",
       lat: 40.7128,
       lng: -74.006,
-      thumbnail: "/images/places/nyc.HEIC",
+      thumbnail: "/images/places/nyc.JPG",
       description:
-        "The city that needs no introduction — energy, pizza, and endless things to see.",
+        "The big apple! Visited 2025",
     },
     {
       id: "place-las-vegas",
@@ -140,7 +165,7 @@ export const fun: FunContent = {
       lng: -115.1398,
       thumbnail: "/images/places/lasvegas.jpg",
       description:
-        "Neon lights, shows, and the desert absurdity of the Strip.",
+        "Does this place need an introduction? Visited 2018",
     },
     {
       id: "place-grand-canyon",
@@ -149,34 +174,34 @@ export const fun: FunContent = {
       lng: -112.1401,
       thumbnail: "/images/places/grandcanyon.jpg",
       description:
-        "Standing at the edge of something that genuinely doesn't look real.",
+        "Big hole in the ground. Visited 2018",
     },
     {
       id: "place-florida",
-      name: "Florida",
-      lat: 25.7617,
-      lng: -80.1918,
-      thumbnail: "/images/places/florida.HEIC",
+      name: "St. Augustine",
+      lat: 29.8892,
+      lng: -81.3043,
+      thumbnail: "/images/places/florida.JPG",
       description:
-        "Sun, beaches, and a warm escape from Canadian winters.",
+        "Oldest city in the US and beautiful Florida weather. Visited 2024",
     },
     {
       id: "place-mumbai",
       name: "Mumbai",
       lat: 19.076,
       lng: 72.8777,
-      thumbnail: "/images/places/mumbai.HEIC",
+      thumbnail: "/images/places/mumbai.JPG",
       description:
-        "India's financial capital — chaotic, vibrant, and impossible to forget.",
+        "India's NYC and LA. Born here 2005",
     },
     {
       id: "place-kancheepuram",
-      name: "Kanchipuram",
+      name: "Tamil Nadu",
       lat: 12.8342,
       lng: 79.7036,
-      thumbnail: "/images/places/kancheepuram.HEIC",
+      thumbnail: "/images/places/kancheepuram.JPG",
       description:
-        "Temple town in Tamil Nadu — silk sarees and centuries of history.",
+        "Cool picture from above showing the green fields during the North-East monsoon. Visited 2023",
     },
   ],
 };
