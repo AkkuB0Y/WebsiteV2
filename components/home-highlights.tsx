@@ -1,7 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
-import { getHomeHighlights } from "@/lib/highlights";
+import type { Place } from "@/content/fun";
+import {
+  getDefaultPlace,
+  getHomeHighlights,
+  getRandomPlace,
+} from "@/lib/highlights";
 import { resolveFunImageSrc } from "@/lib/fun-image";
 import { cn } from "@/lib/utils";
 
@@ -23,6 +31,7 @@ type HighlightTileProps = {
   title: string;
   meta?: string;
   thumbnail?: { src: string; alt: string };
+  centered?: boolean;
 };
 
 function HighlightTile({
@@ -31,11 +40,17 @@ function HighlightTile({
   title,
   meta,
   thumbnail,
+  centered = false,
 }: HighlightTileProps) {
   const content = (
     <>
       <HighlightLabel>{label}</HighlightLabel>
-      <div className={cn(thumbnail && "flex items-center gap-3")}>
+      <div
+        className={cn(
+          thumbnail && "flex items-center gap-3",
+          centered && "justify-center"
+        )}
+      >
         {thumbnail ? (
           <div className="relative h-9 w-9 shrink-0 overflow-hidden rounded border border-border/80 bg-surface-2">
             <Image
@@ -56,8 +71,10 @@ function HighlightTile({
     </>
   );
 
-  const className =
-    "group block min-w-0 rounded-md px-3 py-3 transition-colors hover:bg-surface/60 sm:px-4";
+  const className = cn(
+    "group block min-w-0 rounded-md px-3 py-3 transition-colors hover:bg-surface/60 sm:px-4",
+    centered && "text-center"
+  );
 
   return (
     <Link href={href} className={className}>
@@ -67,7 +84,12 @@ function HighlightTile({
 }
 
 export function HomeHighlights() {
-  const { experience: latestExperience, project, place } = getHomeHighlights();
+  const { experience: latestExperience, project } = getHomeHighlights();
+  const [place, setPlace] = useState<Place | null>(getDefaultPlace);
+
+  useEffect(() => {
+    setPlace(getRandomPlace());
+  }, []);
 
   if (!latestExperience && !project && !place) {
     return null;
@@ -98,6 +120,7 @@ export function HomeHighlights() {
             label="Somewhere"
             title={place.name}
             thumbnail={{ src: place.thumbnail, alt: place.name }}
+            centered
           />
         ) : null}
       </div>
