@@ -33,12 +33,16 @@ export type Place = {
 };
 
 export type FunContent = {
+  youtube: string;
+  instagram: string;
   videos: FunVideo[];
   galleryPhotos: GalleryPhoto[];
   places: Place[];
 };
 
 export const fun: FunContent = {
+  youtube: "https://www.youtube.com/@akkub0y",
+  instagram: "https://www.instagram.com/notakshaysatish/",
   videos: [
     {
       id: "video-1",
