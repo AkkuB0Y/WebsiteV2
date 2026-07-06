@@ -117,7 +117,7 @@ export function HomeHighlights() {
         {place ? (
           <HighlightTile
             href="/fun"
-            label="Somewhere"
+            label="Places"
             title={place.name}
             thumbnail={{ src: place.thumbnail, alt: place.name }}
             centered
