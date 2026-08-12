@@ -64,47 +64,47 @@ export const fun: FunContent = {
     {
       id: "photo-1",
       src: "/images/gallery/IMG_1127.JPG",
-      alt: "vancouver",
+      alt: "bc-1",
     },
     {
       id: "photo-2",
       src: "/images/gallery/IMG_1591.JPG",
-      alt: "vancouver",
+      alt: "bc-2",
     },
     {
       id: "photo-3",
       src: "/images/gallery/IMG_1609.JPG",
-      alt: "vancouver",
+      alt: "bc-3",
     },
     {
       id: "photo-4",
       src: "/images/gallery/IMG_1636.JPG",
-      alt: "vancouver",
+      alt: "bc-4",
     },
     {
       id: "photo-5",
       src: "/images/gallery/IMG_1150.JPG",
-      alt: "vancouver",
+      alt: "bc-5",
     },
     {
       id: "photo-6",
       src: "/images/gallery/IMG_1172.JPG",
-      alt: "vancouver",
+      alt: "bc-6",
     },
     {
       id: "photo-7",
       src: "/images/gallery/IMG_1215.JPG",
-      alt: "vancouver",
+      alt: "bc-7",
     },
     {
       id: "photo-8",
       src: "/images/gallery/IMG_1217.JPG",
-      alt: "vancouver",
+      alt: "bc-8",
     },
     {
       id: "photo-9",
       src: "/images/gallery/IMG_1570.JPG",
-      alt: "vancouver",
+      alt: "bc-9",
     },
   ],
   places: [
