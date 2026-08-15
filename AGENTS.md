@@ -11,8 +11,13 @@ ahead of time instead.
 - Build is a static export → the entire `public/` folder is copied as-is.
 - Scripts (see `package.json`):
   - `npm run dev` / `npm run build` → run `prepare-images` first, then Next.
-  - `npm run prepare-images` → `convert-heic` then `optimize-images`.
+  - `npm run prepare-images` → `convert-heic`, then `optimize-images`, then
+    `gallery-manifest`.
   - `npm run optimize-images` → `node scripts/optimize-images.mjs`.
+  - `npm run reoptimize-images` → same script with `--force` (re-encode from
+    `image-originals/`; only when target sizes change).
+  - `npm run gallery-manifest` → `node scripts/generate-gallery-manifest.mjs`
+    (writes `content/gallery-manifest.json`).
 
 ---
 
@@ -32,25 +37,50 @@ npm run optimize-images
 What the script (`scripts/optimize-images.mjs`) does:
 
 - Targets `public/images/gallery`, `public/images/places`, `public/images/experience`.
-- Resizes to **max 1600px wide** (never enlarges), re-encodes JPEG at **quality 80**
-  (mozjpeg); PNGs are recompressed losslessly.
+- Resizes per folder (never enlarges), re-encodes JPEG at **quality 80** (mozjpeg);
+  PNGs are recompressed losslessly:
+  - gallery → **max 600px** wide
+  - places → **max 400px** wide
+  - experience → **max 256px** wide
 - **Backs up each original once** to `image-originals/` (gitignored) before rewriting.
 - **Idempotent:** if a backup already exists for a file, it is skipped — so repeated
   runs never re-compress and degrade quality. Verify by running twice; the second
   run should print no `Optimized ...` lines.
+- `npm run reoptimize-images` restores each file from `image-originals/` and
+  re-encodes. Use **only** when the target sizes in `IMAGE_DIRS` change.
 
 ### When adding NEW images
 
-1. Drop the image into the appropriate `public/images/<dir>/`.
-2. Run `npm run optimize-images` (or just `npm run dev` / `npm run build`, which
-   call it automatically).
-3. Reference it with its normal path (e.g. `/images/gallery/foo.jpg`). No code
-   changes needed — paths stay the same; only the file bytes shrink.
+**Gallery** (auto-discovered — filenames do not matter):
+
+1. Drop any image into `public/images/gallery/`.
+2. Run `npm run prepare-images` (or just `npm run dev` / `npm run build`).
+3. Commit both the new image(s) and the regenerated
+   `content/gallery-manifest.json`. No TypeScript edits.
+
+**Places / experience** (still hand-referenced):
+
+1. Drop the image into `public/images/places/` or `public/images/experience/`.
+2. Run `npm run prepare-images` (or `npm run dev` / `npm run build`).
+3. Reference it from `content/fun.ts` or `content/experience.ts` with its normal
+   path (e.g. `/images/places/foo.jpg`). Paths stay the same; only the file bytes
+   shrink.
+
+### Gallery pipeline
+
+```
+public/images/gallery/
+  → scripts/generate-gallery-manifest.mjs
+  → content/gallery-manifest.json
+  → content/gallery.ts
+  → ParallaxGallery (shuffled client-side on each page load)
+```
 
 ### To tune or extend
 
 - Add a new folder → append it to `IMAGE_DIRS` in `scripts/optimize-images.mjs`.
-- Change quality/size → edit `MAX_WIDTH` / `JPEG_QUALITY` constants in the same file.
+- Change quality/size → edit `maxWidth` / `JPEG_QUALITY` / `skipSizeBytes` in the
+  same file. After changing sizes, run `npm run reoptimize-images`.
 
 ### To restore an original
 
@@ -61,7 +91,8 @@ the script will re-process it.
 
 - **Never** hand-edit or overwrite originals destructively without a backup.
 - **Never** turn the script into something that re-encodes already-optimized files
-  (it must stay idempotent via the `image-originals/` marker).
+  (it must stay idempotent via the `image-originals/` marker; use `--force` only
+  when intentionally re-encoding from backups).
 - **Do not** set `images.unoptimized: false` or remove `output: "export"` — that
   breaks the static-export deploy.
 

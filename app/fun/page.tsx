@@ -5,6 +5,7 @@ import { ParallaxGallery } from "@/components/fun/parallax-gallery";
 import { PlacesMapLoader } from "@/components/fun/places-map-loader";
 import { YoutubeGrid } from "@/components/fun/youtube-grid";
 import { Section } from "@/components/section";
+import { galleryPhotos } from "@/content/gallery";
 import { fun } from "@/content/fun";
 import { actionLinkClassName } from "@/lib/card-styles";
 
@@ -40,7 +41,7 @@ export default function FunPage() {
 
         <section>
           <FunSubsectionTitle>Gallery</FunSubsectionTitle>
-          <ParallaxGallery photos={fun.galleryPhotos} />
+          <ParallaxGallery photos={galleryPhotos} />
         </section>
 
         <section>

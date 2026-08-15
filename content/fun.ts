@@ -2,7 +2,7 @@
  * Fun page content — edit this file to update /fun.
  *
  * Images go in public/:
- *   - Gallery:  public/images/gallery/  (.JPG supported — auto-converted to .jpg on build)
+ *   - Gallery:  public/images/gallery/  (any filename — auto-listed at build time)
  *   - Places:   public/images/places/
  *
  * YouTube ID = the `v=` param from a watch URL
@@ -15,12 +15,6 @@ export type FunVideo = {
   id: string;
   youtubeId: string;
   title: string;
-};
-
-export type GalleryPhoto = {
-  id: string;
-  src: string;
-  alt: string;
 };
 
 export type Place = {
@@ -36,7 +30,6 @@ export type FunContent = {
   youtube: string;
   instagram: string;
   videos: FunVideo[];
-  galleryPhotos: GalleryPhoto[];
   places: Place[];
 };
 
@@ -58,53 +51,6 @@ export const fun: FunContent = {
       id: "video-3",
       youtubeId: "m5w_zMPqDic",
       title: "Guns N' Roses - Knockin' on Heaven's Door (Solo Cover)",
-    },
-  ],
-  galleryPhotos: [
-    {
-      id: "photo-1",
-      src: "/images/gallery/IMG_1127.JPG",
-      alt: "bc-1",
-    },
-    {
-      id: "photo-2",
-      src: "/images/gallery/IMG_1591.JPG",
-      alt: "bc-2",
-    },
-    {
-      id: "photo-3",
-      src: "/images/gallery/IMG_1609.JPG",
-      alt: "bc-3",
-    },
-    {
-      id: "photo-4",
-      src: "/images/gallery/IMG_1636.JPG",
-      alt: "bc-4",
-    },
-    {
-      id: "photo-5",
-      src: "/images/gallery/IMG_1150.JPG",
-      alt: "bc-5",
-    },
-    {
-      id: "photo-6",
-      src: "/images/gallery/IMG_1172.JPG",
-      alt: "bc-6",
-    },
-    {
-      id: "photo-7",
-      src: "/images/gallery/IMG_1215.JPG",
-      alt: "bc-7",
-    },
-    {
-      id: "photo-8",
-      src: "/images/gallery/IMG_1217.JPG",
-      alt: "bc-8",
-    },
-    {
-      id: "photo-9",
-      src: "/images/gallery/IMG_1570.JPG",
-      alt: "bc-9",
     },
   ],
   places: [
