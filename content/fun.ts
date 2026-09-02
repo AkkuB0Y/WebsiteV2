@@ -70,7 +70,7 @@ export const fun: FunContent = {
       lng: -123.1207,
       thumbnail: "/images/places/vancouver.JPG",
       description:
-        "Never seen snow-capped peaks and palm trees on a beach in one view except for here. Currently here for my 4th co-op.",
+        "Has it all - from palm trees to snow capped peaks. Lived here for my 4th co-op.",
     },
     {
       id: "place-montreal",
@@ -152,6 +152,33 @@ export const fun: FunContent = {
       thumbnail: "/images/places/kancheepuram.JPG",
       description:
         "Cool picture from above showing the green fields during the North-East monsoon. Visited 2023",
+    },
+    {
+      id: "place-austin",
+      name: "Austin",
+      lat: 30.2672,
+      lng: -97.7431,
+      thumbnail: "/images/places/austin.JPG",
+      description:
+        "Realized everything truly was bigger in Texas here. Visited 2023",
+    },
+    {
+      id: "place-dubai",
+      name: "Dubai",
+      lat: 25.2770,
+      lng: 55.2962,
+      thumbnail: "/images/places/dubai.JPG",
+      description:
+        "Glittering metropolis amidst the desert. Lived here till 2013",
+    },
+    {
+      id: "place-london",
+      name: "London",
+      lat: 51.5074,
+      lng: 0,
+      thumbnail: "/images/places/london.JPG",
+      description:
+        "Capital of the UK and full of history and culture. Visited 2011",
     },
   ],
 };
