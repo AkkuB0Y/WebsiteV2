@@ -12,6 +12,12 @@ type PlacesMapProps = {
   places: Place[];
 };
 
+const CARTO_TILE_URL = `https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png${
+  process.env.NEXT_PUBLIC_CARTO_API_KEY
+    ? `?key=${process.env.NEXT_PUBLIC_CARTO_API_KEY}`
+    : ""
+}`;
+
 function createMarkerIcon() {
   return L.divIcon({
     className: "",
@@ -54,7 +60,7 @@ export function PlacesMap({ places }: PlacesMapProps) {
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+          url={CARTO_TILE_URL}
         />
         {places.map((place) => (
           <Marker

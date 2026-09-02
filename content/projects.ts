@@ -60,11 +60,11 @@ export const projectSections: ProjectSection[] = [
       },
       {
         id: "project-2",
-        title: "NoteFinder",
+        title: "SynthCV",
         description:
-          "A real-time CV system that ingests a webcam feed of a guitarist's fretting hand and outputs the (string, fret) position of each pressed finger",
+          "A real-time CV-based musical instrument. Reads your fingers and plays chords for you",
         stack: ["opencv", "mediapipe", "numpy"],
-        url: "https://github.com/AkkuB0Y/NoteFinder",
+        url: "https://github.com/AkkuB0Y/SynthCV",
       },
       {
         id: "project-3",

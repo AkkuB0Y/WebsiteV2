@@ -20,15 +20,26 @@ export const experience: Experience[] = [
     id: "exp-1",
     role: "DevOps & Infrastructure Intern",
     company: "Scrawlr",
-    dates: "May 2026 -",
+    dates: "May 2026 - August 2026",
     summary:
-      "I'm currently working at Scrawlr as a DevOps Engineering Intern. So far, I've rebuilt 'Poppy', a GitHub Actions PR reviewer that uses MCP and OpenAI to tear through massive 1,000-line code diffs in seconds for 50+ engineers. I've also overhauled our cross-repo observability with Sentry and Slack, fixed critical memory crashes for scraping processes using AWS ECS and Terraform, and spun up automated local dev tooling with Postgres and 1Password CLI.",
+      "Over summer 2026, I interned at Scrawlr as a DevOps & Infrastructure Intern. While there, I did all things infra and even dabbled in some AI work. I rebuilt 'Poppy', a GitHub Actions PR reviewer that uses MCP and OpenAI to tear through massive 1,000-line code diffs in minutes for 50+ engineers and also built an agentic scraper to reconcile varying jurisdictional tax rates. I also overhauled our cross-repo observability with Sentry and Slack, fixed critical memory crashes for scraping processes using AWS ECS and Terraform, and spun up automated local dev tooling with Postgres and 1Password CLI.",
     stack: ["aws", "terraform", "mcp", "github actions ci", "sentry", "postgres"],
     url: "https://scrawlr.com",
     logo: "/images/experience/scrawlr.png",
   },
   {
     id: "exp-2",
+    role: "Team Member",
+    company: "WATCloud",
+    dates: "June 2026 -",
+    summary:
+      "I'm currently a team member at WATCloud, a design team that manages a distributed cloud computing network, providing scalable and resilient infrastructure for 10+ engineering design teams across the university.",
+    stack: ["ansible", "ceph", "prometheus", "terraform", "kubernetes"],
+    url: "https://cloud.watonomous.ca",
+    logo: "/images/experience/watcloud.png",
+  },
+  {
+    id: "exp-3",
     role: "Network Automation Intern",
     company: "Nokia",
     dates: "September 2025 – December 2025",
@@ -39,7 +50,7 @@ export const experience: Experience[] = [
     logo: "/images/experience/nokia.jpeg",
   },
   {
-    id: "exp-3",
+    id: "exp-4",
     role: "Software Developer Intern",
     company: "Nokia",
     dates: "Jan 2025 – April 2025",
@@ -50,7 +61,7 @@ export const experience: Experience[] = [
     logo: "/images/experience/nokia.jpeg",
   },
   {
-    id: "exp-4",
+    id: "exp-5",
     role: "Technical Consultant Intern",
     company: "Zafin",
     dates: "May 2024 – Aug 2024",
@@ -61,7 +72,7 @@ export const experience: Experience[] = [
     logo: "/images/experience/zafin.jpeg",
   },
   {
-    id: "exp-5",
+    id: "exp-6",
     role: "Freelance Web Developer",
     company: "KTB / Finex / The Smile Team",
     dates: "Jul 2023 - ",

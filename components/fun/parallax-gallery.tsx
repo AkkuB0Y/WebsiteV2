@@ -8,9 +8,10 @@ import {
   useTransform,
   type MotionValue,
 } from "framer-motion";
+import Image from "next/image";
 
-import { FunImage } from "@/components/fun/fun-image";
-import type { GalleryPhoto } from "@/content/fun";
+import type { GalleryPhoto } from "@/content/gallery";
+import { shuffle } from "@/lib/shuffle";
 import { cn } from "@/lib/utils";
 
 type ParallaxGalleryProps = {
@@ -55,7 +56,7 @@ function GalleryTile({
           style={{ x: imageX }}
           className="absolute inset-0 scale-[1.12]"
         >
-          <FunImage
+          <Image
             src={photo.src}
             alt={photo.alt}
             fill
@@ -64,7 +65,7 @@ function GalleryTile({
           />
         </motion.div>
       ) : (
-        <FunImage
+        <Image
           src={photo.src}
           alt={photo.alt}
           fill
@@ -137,10 +138,15 @@ export function ParallaxGallery({ photos }: ParallaxGalleryProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
+  const [orderedPhotos, setOrderedPhotos] = useState(photos);
+
+  useEffect(() => {
+    setOrderedPhotos(shuffle(photos));
+  }, [photos]);
 
   const [rowOne, rowTwo] = useMemo(
-    () => splitIntoTwoRows(photos),
-    [photos]
+    () => splitIntoTwoRows(orderedPhotos),
+    [orderedPhotos]
   );
 
   const { scrollYProgress } = useScroll({
@@ -219,7 +225,7 @@ export function ParallaxGallery({ photos }: ParallaxGalleryProps) {
       element.removeEventListener("scroll", updateScrollHints);
       window.removeEventListener("resize", updateScrollHints);
     };
-  }, [photos]);
+  }, [orderedPhotos]);
 
   return (
     <div

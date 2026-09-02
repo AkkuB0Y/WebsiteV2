@@ -2,7 +2,7 @@
  * Fun page content — edit this file to update /fun.
  *
  * Images go in public/:
- *   - Gallery:  public/images/gallery/  (.JPG supported — auto-converted to .jpg on build)
+ *   - Gallery:  public/images/gallery/  (any filename — auto-listed at build time)
  *   - Places:   public/images/places/
  *
  * YouTube ID = the `v=` param from a watch URL
@@ -15,12 +15,6 @@ export type FunVideo = {
   id: string;
   youtubeId: string;
   title: string;
-};
-
-export type GalleryPhoto = {
-  id: string;
-  src: string;
-  alt: string;
 };
 
 export type Place = {
@@ -36,7 +30,6 @@ export type FunContent = {
   youtube: string;
   instagram: string;
   videos: FunVideo[];
-  galleryPhotos: GalleryPhoto[];
   places: Place[];
 };
 
@@ -60,53 +53,6 @@ export const fun: FunContent = {
       title: "Guns N' Roses - Knockin' on Heaven's Door (Solo Cover)",
     },
   ],
-  galleryPhotos: [
-    {
-      id: "photo-1",
-      src: "/images/gallery/IMG_1127.JPG",
-      alt: "bc-1",
-    },
-    {
-      id: "photo-2",
-      src: "/images/gallery/IMG_1591.JPG",
-      alt: "bc-2",
-    },
-    {
-      id: "photo-3",
-      src: "/images/gallery/IMG_1609.JPG",
-      alt: "bc-3",
-    },
-    {
-      id: "photo-4",
-      src: "/images/gallery/IMG_1636.JPG",
-      alt: "bc-4",
-    },
-    {
-      id: "photo-5",
-      src: "/images/gallery/IMG_1150.JPG",
-      alt: "bc-5",
-    },
-    {
-      id: "photo-6",
-      src: "/images/gallery/IMG_1172.JPG",
-      alt: "bc-6",
-    },
-    {
-      id: "photo-7",
-      src: "/images/gallery/IMG_1215.JPG",
-      alt: "bc-7",
-    },
-    {
-      id: "photo-8",
-      src: "/images/gallery/IMG_1217.JPG",
-      alt: "bc-8",
-    },
-    {
-      id: "photo-9",
-      src: "/images/gallery/IMG_1570.JPG",
-      alt: "bc-9",
-    },
-  ],
   places: [
     {
       id: "place-toronto",
@@ -124,7 +70,7 @@ export const fun: FunContent = {
       lng: -123.1207,
       thumbnail: "/images/places/vancouver.JPG",
       description:
-        "Never seen snow-capped peaks and palm trees on a beach in one view except for here. Currently here for my 4th co-op.",
+        "Has it all - from palm trees to snow capped peaks. Lived here for my 4th co-op.",
     },
     {
       id: "place-montreal",
@@ -206,6 +152,33 @@ export const fun: FunContent = {
       thumbnail: "/images/places/kancheepuram.JPG",
       description:
         "Cool picture from above showing the green fields during the North-East monsoon. Visited 2023",
+    },
+    {
+      id: "place-austin",
+      name: "Austin",
+      lat: 30.2672,
+      lng: -97.7431,
+      thumbnail: "/images/places/austin.JPG",
+      description:
+        "Realized everything truly was bigger in Texas here. Visited 2023",
+    },
+    {
+      id: "place-dubai",
+      name: "Dubai",
+      lat: 25.2770,
+      lng: 55.2962,
+      thumbnail: "/images/places/dubai.JPG",
+      description:
+        "Glittering metropolis amidst the desert. Lived here till 2013",
+    },
+    {
+      id: "place-london",
+      name: "London",
+      lat: 51.5074,
+      lng: 0,
+      thumbnail: "/images/places/london.JPG",
+      description:
+        "Capital of the UK and full of history and culture. Visited 2011",
     },
   ],
 };

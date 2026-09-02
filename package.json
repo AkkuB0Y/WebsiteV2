@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "npm run prepare-images && next dev --turbopack",
     "build": "npm run prepare-images && next build",
-    "prepare-images": "npm run convert-heic && npm run optimize-images",
+    "prepare-images": "npm run convert-heic && npm run optimize-images && npm run gallery-manifest",
     "convert-heic": "node scripts/convert-heic-images.mjs",
     "optimize-images": "node scripts/optimize-images.mjs",
+    "reoptimize-images": "node scripts/optimize-images.mjs --force",
+    "gallery-manifest": "node scripts/generate-gallery-manifest.mjs",
     "start": "next start",
     "lint": "next lint"
   },
